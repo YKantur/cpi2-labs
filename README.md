@@ -9,6 +9,8 @@ Repo for components of program engineering labs
     
       callback function is added, [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.py#L27-L31)
   * Prepare demo cases for the usage
+    
+      prepared demo case, [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.py#L34-L46)
   * Add new on-demend feature during review
   *  e.g.: Add support for debounce (if the task took less then X time to
     complete -- add an additional execution delya)
