@@ -10,10 +10,12 @@ Repo for components of program engineering labs
       callback function is added, [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.py#L27-L31)
   * Prepare demo cases for the usage
     
-      prepared demo case, [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.py#L34-L46)
+      runDemo function demostrates working of asyncFilterMap with debounce ([viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.py#L45)) and without debounce ([viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.py#L40))
   * Add new on-demend feature during review
-  *  e.g.: Add support for debounce (if the task took less then X time to
+    e.g.: Add support for debounce (if the task took less then X time to
     complete -- add an additional execution delya)
+
+      Added debounce support: if callback execution time is less than specified, an additional delay is performed. This avoids calling the callback too quickly, [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.py#L21-L22)
 ## Task 2
   * Prepare promise based alternative
   * Write use cases for the promise based solution
