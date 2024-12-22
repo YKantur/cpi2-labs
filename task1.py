@@ -22,3 +22,11 @@ async def asyncFilterMap(
             await asyncio.sleep(debounceValue - elapsedTime) # add delay if too fast
 
     return resultItems
+    
+# callback, does even number checks
+async def exampleCallback(theItem: int) -> Any:
+    await asyncio.sleep(0.1) # pretend this takes time
+    if theItem % 2 == 0:
+        return theItem ** 2 # square if even
+    return None # nothing if odd
+
