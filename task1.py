@@ -44,3 +44,6 @@ async def runDemo():
     print("\nRunning with debounce (0.2 sec)...")
     debounceResult = await asyncFilterMap(inputArray, exampleCallback, debounceValue=0.2)
     print("Result with debounce:", debounceResult)
+
+if __name__ == "__main__":
+    asyncio.run(runDemo())
