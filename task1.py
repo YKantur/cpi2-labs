@@ -30,3 +30,17 @@ async def exampleCallback(theItem: int) -> Any:
         return theItem ** 2 # square if even
     return None # nothing if odd
 
+# demo part
+async def runDemo():
+    inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    print("Original array:", inputArray)
+
+    # no debounce case
+    print("\nRunning without debounce...")
+    noDebounceResult = await asyncFilterMap(inputArray, exampleCallback)
+    print("Result without debounce:", noDebounceResult)
+
+    # with debounce case
+    print("\nRunning with debounce (0.2 sec)...")
+    debounceResult = await asyncFilterMap(inputArray, exampleCallback, debounceValue=0.2)
+    print("Result with debounce:", debounceResult)
