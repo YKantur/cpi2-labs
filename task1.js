@@ -36,3 +36,32 @@ function asyncFilter(array, asyncPredicate, finalCallback, debounceTime = 0) {
     });
   });
 }
+
+function demoAsyncFilter() {
+  const numbers = [1, 2, 3, 4, 5];
+
+  console.log("Starting asyncFilter with debounce: ");
+  asyncFilter(
+    numbers,
+    (num, done) => {
+      console.log(`Processing (debounce): ${num}`);
+      simulateAsync(num, 300, done);
+    },
+    (results) => {
+      console.log("asyncFilter results (with debounce):", results);
+    },
+    500 // Debounce 500ms
+  );
+
+  console.log("Starting asyncFilter without debounce: ");
+  asyncFilter(
+    numbers,
+    (num, done) => {
+      console.log(`Processing (no debounce): ${num}`);
+      simulateAsync(num, 100, done);
+    },
+    (results) => {
+      console.log("asyncFilter results (without debounce):", results);
+    }
+  );
+}
