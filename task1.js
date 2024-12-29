@@ -65,3 +65,5 @@ function demoAsyncFilter() {
     }
   );
 }
+// demonstrates how the asynchronous filter works
+demoAsyncFilter();
