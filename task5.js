@@ -148,3 +148,18 @@ async function demoAsyncFilterWithRxJS() {
       filterAbortedSubscription.unsubscribe();
     }
   );
+
+  setTimeout(() => {
+    console.log("Aborting...");
+    controller.abort();
+  }, 400);
+
+  try {
+    await filterPromise;
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+// Commit 5: Execute demo function
+demoAsyncFilterWithRxJS();
