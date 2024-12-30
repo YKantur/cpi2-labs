@@ -115,5 +115,33 @@ async function demoAsyncFilterAsyncAwait() {
     "asyncFilterAsyncAwait results (with debounce):",
     resultsWithDebounce
   );
+    console.log("Starting asyncFilterAsyncAwait without debounce...");
+  const resultsWithoutDebounce = await asyncFilterAsyncAwait(
+    numbers,
+    async (num) => {
+      console.log(`Processing (async/await without debounce): ${num}`);
+      return simulateAsync(num, 100);
+    }
+  );
+  console.log(
+    "asyncFilterAsyncAwait results (without debounce):",
+    resultsWithoutDebounce
+  );
+
+  console.log("Starting asyncFilterAsyncAwait with parallelism (2)...");
+  const resultsWithParallelism = await asyncFilterAsyncAwait(
+    numbers,
+    async (num) => {
+      console.log(`Processing (async/await with parallelism): ${num}`);
+      return simulateAsync(num, 200);
+    },
+    0,
+    2
+  );
+  console.log(
+    "asyncFilterAsyncAwait results (with parallelism):",
+    resultsWithParallelism
+  );
+}
 
 
