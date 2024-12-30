@@ -24,7 +24,7 @@
   * Integrate AbortController or other Cancallable approach: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L83-L84), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L91), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L3-L5), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L11-L14), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L21-L23), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L70-L75), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L96-L99)
 
 ### Task 4 ### 
-  * (Stream/AsyncIterator/Alternative) -- Ongoing processing of large data sets that do not fit in memory
+  * (Stream/AsyncIterator/Alternative) -- Ongoing processing of large data sets that do not fit in memory: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task4.js#L12-14), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task4.js#L25), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task4.js#L46-48)
 
 ### Task 5 ### 
   * (Observable/EventEmitter/Alternative) -- Reactive message based communication between entities
