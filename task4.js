@@ -94,3 +94,41 @@ async function demoAsyncFilter(
     console.error("Error:", error);
   }
 }
+
+async function runDemos() {
+  const numbers = [1, 2, 3, 4, 5];
+
+  await demoAsyncFilter(
+    "with abort and debounce",
+    numbers,
+    (num, signal) => {
+      console.log(`Processing (with abort and debounce): ${num}`);
+      return simulateAsync(num, 300, signal);
+    },
+    { debounceTime: 500, parallelism: 2 },
+    400
+  );
+
+  await demoAsyncFilter(
+    "without abort and debounce",
+    numbers,
+    (num, signal) => {
+      console.log(`Processing (without abort and debounce): ${num}`);
+      return simulateAsync(num, 300, signal);
+    },
+    { debounceTime: 500, parallelism: 2 }
+  );
+
+  await demoAsyncFilter(
+    "without abort, no debounce",
+    numbers,
+    (num, signal) => {
+      console.log(`Processing (without abort, no debounce): ${num}`);
+      return simulateAsync(num, 100, signal);
+    },
+    { parallelism: 2 }
+  );
+}
+
+runDemos();
+
