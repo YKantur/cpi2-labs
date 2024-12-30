@@ -64,3 +64,33 @@ function asyncFilter(asyncIterable, asyncPredicate, options = {}) {
   });
 }
 
+async function demoAsyncFilter(
+  description,
+  numbers,
+  predicate,
+  options,
+  abortTimeout
+) {
+  const controller = new AbortController();
+  const signal = controller.signal;
+
+  console.log(`\nStarting asyncFilter (${description})...`);
+  const filterPromise = asyncFilter(generateData(numbers), predicate, {
+    ...options,
+    signal,
+  });
+
+  if (abortTimeout) {
+    setTimeout(() => {
+      console.log("Aborting...");
+      controller.abort();
+    }, abortTimeout);
+  }
+
+  try {
+    const results = await filterPromise;
+    console.log(`asyncFilter results (${description}):`, results);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
