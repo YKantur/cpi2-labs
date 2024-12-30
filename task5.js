@@ -96,3 +96,55 @@ function asyncFilter(asyncIterable, asyncPredicate, options = {}) {
     filterAborted$,
   };
 }
+
+async function demoAsyncFilterWithRxJS() {
+  const numbers = [1, 2, 3, 4, 5];
+  const controller = new AbortController();
+  const signal = controller.signal;
+
+  console.log("\nStarting asyncFilter with RxJS...");
+  const filterObservable = asyncFilter(
+    generateData(numbers),
+    (num, signal) => {
+      console.log(`Processing (with RxJS): ${num}`);
+      return simulateAsync(num, 300, signal);
+    },
+    { signal, debounceTime: 500, parallelism: 2 }
+  );
+
+  const filterPromise = filterObservable.resultsPromise;
+
+  const itemStartSubscription = filterObservable.itemStart$.subscribe((item) =>
+    console.log("Item processing started:", item)
+  );
+  const itemCompleteSubscription = filterObservable.itemComplete$.subscribe(
+    (result) => console.log("Item processing completed:", result)
+  );
+  const itemPassedSubscription = filterObservable.itemPassed$.subscribe(
+    (item) => console.log("Item passed filter:", item)
+  );
+  const filterStartSubscription = filterObservable.filterStart$.subscribe(() =>
+    console.log("Filter process started.")
+  );
+  const filterCompleteSubscription = filterObservable.filterComplete$.subscribe(
+    (results) => {
+      console.log("Filter process completed. Results:", results);
+      itemStartSubscription.unsubscribe();
+      itemCompleteSubscription.unsubscribe();
+      itemPassedSubscription.unsubscribe();
+      filterStartSubscription.unsubscribe();
+      filterAbortedSubscription.unsubscribe();
+      filterCompleteSubscription.unsubscribe();
+    }
+  );
+
+  const filterAbortedSubscription = filterObservable.filterAborted$.subscribe(
+    () => {
+      console.log("Filter process was aborted.");
+      itemStartSubscription.unsubscribe();
+      itemCompleteSubscription.unsubscribe();
+      itemPassedSubscription.unsubscribe();
+      filterStartSubscription.unsubscribe();
+      filterAbortedSubscription.unsubscribe();
+    }
+  );
