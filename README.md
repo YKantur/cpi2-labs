@@ -11,17 +11,17 @@
     complete -- add an additional execution delya): [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.js#L40-L54)
 
 ### Task 2 ###
-  * Prepare promise based alternative: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.js#L1-L7), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.js#L62), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.js#L50-L54), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.js#L69-L78), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.js#L106-L113)
-  * Write use cases for the promise based solution: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.js#L65-L100)
-  * Write use cases for the async-await: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.js#L102-L129)
+  * Prepare promise based alternative: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L1-L7), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L62), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L50-L54), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L69-L78), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L106-L113)
+  * Write use cases for the promise based solution: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L65-L100)
+  * Write use cases for the async-await: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L102-L129)
   * Add new on-demend feature during review
-    e.g.: Add support for parallelism: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.js#L131-L145)
+    e.g.: Add support for parallelism: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L131-L145)
 
   Note: for technologies that do not have the native Future-like async functionalities
   You may combine Task 1 and 2 into a single Task that will showcase the idiomatic way of handling concurrency.
  
 ### Task 3 ###
-  * Integrate AbortController or other Cancallable approach
+  * Integrate AbortController or other Cancallable approach: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L83-L84), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L91), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L3-L5), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L11-L14), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L21-L23), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L70-L75), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L96-L99)
 
 ### Task 4 ### 
   * (Stream/AsyncIterator/Alternative) -- Ongoing processing of large data sets that do not fit in memory
