@@ -62,3 +62,18 @@ function createAsyncFilter(useAsyncAwait) {
 const asyncFilterPromise = createAsyncFilter(false);
 const asyncFilterAsyncAwait = createAsyncFilter(true);
 
+function demoAsyncFilterPromise() {
+  const numbers = [1, 2, 3, 4, 5];
+
+  console.log("Starting asyncFilterPromise with debounce...");
+  asyncFilterPromise(
+    numbers,
+    (num) => {
+      console.log(`Processing (promise with debounce): ${num}`);
+      return simulateAsync(num, 300);
+    },
+    500
+  ).then((results) =>
+    console.log("asyncFilterPromise results (with debounce):", results)
+  );
+
