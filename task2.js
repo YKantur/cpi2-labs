@@ -77,7 +77,7 @@ function demoAsyncFilterPromise() {
     console.log("asyncFilterPromise results (with debounce):", results)
   );
 
-    console.log("Starting asyncFilterPromise without debounce...");
+  console.log("Starting asyncFilterPromise without debounce...");
   asyncFilterPromise(numbers, (num) => {
     console.log(`Processing (promise without debounce): ${num}`);
     return simulateAsync(num, 100);
@@ -132,7 +132,7 @@ async function demoAsyncFilterAsyncAwait() {
   const resultsWithParallelism = await asyncFilterAsyncAwait(
     numbers,
     async (num) => {
-      console.log(`Processing (async/await with parallelism): ${num}`);
+      console.log(`Processing (async/await wiUpdate task2.jsth parallelism): ${num}`);
       return simulateAsync(num, 200);
     },
     0,
@@ -143,5 +143,6 @@ async function demoAsyncFilterAsyncAwait() {
     resultsWithParallelism
   );
 }
-
+demoAsyncFilterPromise();
+demoAsyncFilterAsyncAwait();
 
