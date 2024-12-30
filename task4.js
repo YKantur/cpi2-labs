@@ -13,3 +13,54 @@ async function* generateData(array) {
   for (const item of array) yield item;
 }
 
+function asyncFilter(asyncIterable, asyncPredicate, options = {}) {
+  const { debounceTime = 0, parallelism = Infinity, signal } = options;
+
+  return new Promise(async (resolve, reject) => {
+    if (signal?.aborted) return resolve([]);
+
+    const results = [];
+    let runningCount = 0;
+    let debounceTimeout;
+    const iterator = asyncIterable[Symbol.asyncIterator]();
+
+    const processItem = async (item) => {
+      if (signal?.aborted) return;
+      runningCount++;
+      try {
+        if (await asyncPredicate(item, signal)) {
+          results.push(item);
+        }
+      } catch (error) {
+        if (error.message !== "Aborted")
+          console.error("Error during processing:", error);
+      } finally {
+        runningCount--;
+        processNext();
+      }
+    };
+
+    const processNext = async () => {
+      if (signal?.aborted) return;
+      if (runningCount < parallelism) {
+        const { done, value } = await iterator.next();
+        if (!done) {
+          processItem(value);
+        } else if (runningCount === 0) {
+          clearTimeout(debounceTimeout);
+          debounceTimeout = setTimeout(() => resolve(results), debounceTime);
+        }
+      }
+    };
+
+    signal?.addEventListener("abort", () => {
+      clearTimeout(debounceTimeout);
+      resolve([]);
+    });
+
+    for (let i = 0; i < parallelism && !signal?.aborted; i++) {
+      processNext();
+    }
+  });
+}
+
