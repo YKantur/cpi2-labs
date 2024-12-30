@@ -19,7 +19,8 @@ function createAsyncFilter(useAsyncAwait) {
       let debounceTimeout;
       let runningCount = 0;
       const processingQueue = [...array];
-            function processNext() {
+      
+      function processNext() {
         if (processingQueue.length === 0 && runningCount === 0) {
           if (debounceTime > 0) {
             clearTimeout(debounceTimeout);
@@ -31,4 +32,31 @@ function createAsyncFilter(useAsyncAwait) {
           }
           return;
         }
+
+        while (runningCount < parallelism && processingQueue.length > 0) {
+          const item = processingQueue.shift();
+          runningCount++;
+          const predicatePromise = asyncPredicate(item);
+
+          const completionHandler = (passes) => {
+            if (passes) {
+              results.push(item);
+            }
+            completedCount++;
+            runningCount--;
+            processNext();
+          };
+
+          if (useAsyncAwait) {
+            predicatePromise.then(completionHandler);
+          } else {
+            predicatePromise.then(completionHandler);
+          }
+        }
+      }
+      processNext();
+    });
+  };
+}
+
 
