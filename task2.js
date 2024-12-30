@@ -59,4 +59,6 @@ function createAsyncFilter(useAsyncAwait) {
   };
 }
 
+const asyncFilterPromise = createAsyncFilter(false);
+const asyncFilterAsyncAwait = createAsyncFilter(true);
 
