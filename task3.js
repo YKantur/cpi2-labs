@@ -78,3 +78,31 @@ function asyncFilter(array, asyncPredicate, options = {}) {
   });
 }
 
+async function demoAsyncFilterWithAbort() {
+  const numbers = [1, 2, 3, 4, 5];
+  const controller = new AbortController();
+  const signal = controller.signal;
+
+  console.log("Starting asyncFilter with abort and debounce...");
+  const filterPromise = asyncFilter(
+    numbers,
+    (num, signal) => {
+      console.log(`Processing (with abort and debounce): ${num}`);
+      return simulateAsync(num, 300, signal);
+    },
+    { signal, debounceTime: 500 }
+  );
+
+  setTimeout(() => {
+    console.log("Aborting...");
+    controller.abort();
+  }, 400);
+
+  try {
+    const results = await filterPromise;
+    console.log("asyncFilter results (with abort and debounce):", results);
+  } catch (error) {
+    console.log("asyncFilter aborted (catch block):", error.message);
+  }
+}
+
