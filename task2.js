@@ -99,4 +99,21 @@ function demoAsyncFilterPromise() {
   );
 }
 
+async function demoAsyncFilterAsyncAwait() {
+  const numbers = [1, 2, 3, 4, 5];
+
+  console.log("Starting asyncFilterAsyncAwait with debounce...");
+  const resultsWithDebounce = await asyncFilterAsyncAwait(
+    numbers,
+    async (num) => {
+      console.log(`Processing (async/await with debounce): ${num}`);
+      return simulateAsync(num, 300);
+    },
+    500
+  );
+  console.log(
+    "asyncFilterAsyncAwait results (with debounce):",
+    resultsWithDebounce
+  );
+
 
