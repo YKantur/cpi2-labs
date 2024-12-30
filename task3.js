@@ -106,3 +106,19 @@ async function demoAsyncFilterWithAbort() {
   }
 }
 
+async function demoAsyncFilterWithoutAbort() {
+  const numbers = [1, 2, 3, 4, 5];
+
+  console.log("Starting asyncFilter without abort, with debounce...");
+  const results = await asyncFilter(
+    numbers,
+    (num, signal) => {
+      console.log(`Processing (without abort, with debounce): ${num}`);
+      return simulateAsync(num, 300, signal);
+    },
+    { debounceTime: 500 }
+  );
+  console.log("asyncFilter results (without abort, with debounce):", results);
+}
+
+
