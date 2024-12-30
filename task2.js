@@ -77,3 +77,26 @@ function demoAsyncFilterPromise() {
     console.log("asyncFilterPromise results (with debounce):", results)
   );
 
+    console.log("Starting asyncFilterPromise without debounce...");
+  asyncFilterPromise(numbers, (num) => {
+    console.log(`Processing (promise without debounce): ${num}`);
+    return simulateAsync(num, 100);
+  }).then((results) =>
+    console.log("asyncFilterPromise results (without debounce):", results)
+  );
+
+  console.log("Starting asyncFilterPromise with parallelism (2)...");
+  asyncFilterPromise(
+    numbers,
+    (num) => {
+      console.log(`Processing (promise with parallelism): ${num}`);
+      return simulateAsync(num, 200);
+    },
+    0,
+    2
+  ).then((results) =>
+    console.log("asyncFilterPromise results (with parallelism):", results)
+  );
+}
+
+
