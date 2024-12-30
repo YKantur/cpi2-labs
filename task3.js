@@ -121,4 +121,23 @@ async function demoAsyncFilterWithoutAbort() {
   console.log("asyncFilter results (without abort, with debounce):", results);
 }
 
+async function demoAsyncFilterWithoutAbortNoDebounce() {
+  const numbers = [1, 2, 3, 4, 5];
+
+  console.log("Starting asyncFilter without abort, no debounce...");
+  const results = await asyncFilter(
+    numbers,
+    (num, signal) => {
+      console.log(`Processing (without abort, no debounce): ${num}`);
+      return simulateAsync(num, 100, signal);
+    },
+    {}
+  );
+  console.log("asyncFilter results (without abort, no debounce):", results);
+}
+
+demoAsyncFilterWithAbort();
+demoAsyncFilterWithoutAbort();
+demoAsyncFilterWithoutAbortNoDebounce();
+
 
