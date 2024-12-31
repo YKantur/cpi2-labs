@@ -15,7 +15,7 @@
 
     [simulateAsync function returns a promise](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L1-L7)
 
-    [predicatePromise is created when calling the asyncPredicate](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L62)
+    [predicatePromise is created when calling the asyncPredicate](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L39)
 
     [the promise is resolved using .then()](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L50-L54)
 
