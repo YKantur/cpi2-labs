@@ -11,7 +11,18 @@
     complete -- add an additional execution delya): [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task1.js#L40-L54)
 
 ### Task 2 ###
-  * Prepare promise based alternative: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L1-L7), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L62), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L50-L54), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L69-L78), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L106-L113)
+  * Prepare promise based alternative:
+
+    [simulateAsync function returns a promise](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L1-L7)
+
+    [predicatePromise is created when calling the asyncPredicate](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L62)
+
+    [the promise is resolved using .then()](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L50-L54)
+
+    [asyncFilterPromise returns a promise](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L69-L78)
+
+    [Promises are awaited using await](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L106-L113)
+    
   * Write use cases for the promise based solution: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L65-L100)
   * Write use cases for the async-await: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task2.js#L102-L129)
   * Add new on-demend feature during review
