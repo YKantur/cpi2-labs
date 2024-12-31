@@ -21,10 +21,30 @@
   You may combine Task 1 and 2 into a single Task that will showcase the idiomatic way of handling concurrency.
  
 ### Task 3 ###
-  * Integrate AbortController or other Cancallable approach: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L83-L84), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L91), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L3-L5), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L11-L14), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L21-L23), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L70-L75), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L96-L99)
+  * Integrate AbortController or other Cancallable approach:
+  
+    [Creating an AbortController and receiving a signal:](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L83-L84)
+
+    [Passing signal to simulateAsync and asyncFilter](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L91)
+
+    [Signal analysis in simulateAsync 1](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L3-L5)
+
+    [Signal analysis in simulateAsync 2](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L11-L14)
+
+    [Signal analysis in asyncFilter 1](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L21-L23)
+
+    [Signal analysis in asyncFilter 2](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L70-L75)
+
+    [Call controller.abort() to abort](https://github.com/YKantur/cpi2-labs/blob/main/task3.js#L96-L99)
 
 ### Task 4 ### 
-  * (Stream/AsyncIterator/Alternative) -- Ongoing processing of large data sets that do not fit in memory: [defining an asynchronous iterator](https://github.com/YKantur/cpi2-labs/blob/main/task4.js#L12-14), [usage of async iterator in async filter](https://github.com/YKantur/cpi2-labs/blob/main/task4.js#L25), [Iteration using an asynchronous iterator](https://github.com/YKantur/cpi2-labs/blob/main/task4.js#L46-48)
+  * (Stream/AsyncIterator/Alternative) -- Ongoing processing of large data sets that do not fit in memory:
+
+    [defining an asynchronous iterator](https://github.com/YKantur/cpi2-labs/blob/main/task4.js#L12-14)
+
+    [usage of async iterator in async filter](https://github.com/YKantur/cpi2-labs/blob/main/task4.js#L25)
+
+    [Iteration using an asynchronous iterator](https://github.com/YKantur/cpi2-labs/blob/main/task4.js#L46-48)
 
 ### Task 5 ### 
   * (Observable/EventEmitter/Alternative) -- Reactive message based communication between entities:
