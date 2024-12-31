@@ -27,4 +27,14 @@
   * (Stream/AsyncIterator/Alternative) -- Ongoing processing of large data sets that do not fit in memory: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task4.js#L12-14), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task4.js#L25), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task4.js#L46-48)
 
 ### Task 5 ### 
-  * (Observable/EventEmitter/Alternative) -- Reactive message based communication between entities: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L19-24), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L26), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L43), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#46), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L48), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L70), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L79), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L117-150), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L77-82), [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L69-72)
+  * (Observable/EventEmitter/Alternative) -- Reactive message based communication between entities:
+  
+    Subject declaration for event streams: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L19-24).
+  
+    Usage of streams for messages: [filterStart](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L26), [itemStart](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L43), [itemComplete](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#46), [itemPassed](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L48), [filterComplete](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L70), [filterAborted](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L79)
+
+    Subscriptions to track events: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L117-150)
+   
+    Processing of aborts: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L77-82)
+   
+    Process exit: [viewcode](https://github.com/YKantur/cpi2-labs/blob/main/task5.js#L69-72)
